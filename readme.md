@@ -67,4 +67,5 @@ php artisan key:generate
 
 ```
 php artisan serve --ini
-```
+```# php_formulaire
+# php_formulaire

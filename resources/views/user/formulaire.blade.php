@@ -1,4 +1,4 @@
-@extends('template')
+.@extends('template')
 @section('content')
 
     <form class="" action="/user" method="post">
@@ -7,6 +7,12 @@
             <label for="firstname">firstname</label>
             <input type="text" class="form-control" name="firstname" placeholder="firstname">
         </div>
+
+        <div class="form-group">
+            <label for="lastname">lastname</label>
+            <input type="text" name="lastname" class="form-control" placeholder="lastname">
+        </div>
+
         <div class="form-group">
             <label for="gender">Gender</label>
             <select name="gender" class="form-control">

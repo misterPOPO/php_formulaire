@@ -1,8 +1,8 @@
 @extends('template')
 @section('content')
 
-    <form class="" action="" method="">
-
+    <form class="" action="/news" method="post">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" name="title" placeholder="title">

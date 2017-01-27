@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\message;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -37,6 +40,7 @@ class UserController extends Controller
         $data = [];
         $data['user'] = [
             'firstname' => $request->firstname,
+            'lastname'=> $request->lastname,
             'gender' => $request->gender,
             'newsletter' => $request->newsletter,
             'mood' => $request->mood,
@@ -89,5 +93,13 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+       public function test(){
+     $message = DB::select('select * from message where id =1');
+    // $messages = DB::select('select * from message');
+        echo ('coucou');
+        return view ('user.vuez', ['message'=> $message]);
+
     }
 }

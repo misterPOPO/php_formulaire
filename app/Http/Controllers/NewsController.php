@@ -34,7 +34,14 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $data = [];
+            $data['news'] = [
+            'title' => $request->title,
+            'content' => $request->content,
+         
+        ];
+        
+        return view('news.result',$data);
     }
 
     /**

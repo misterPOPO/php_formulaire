@@ -11,25 +11,25 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/user/create', 'UserController@create');
-// Route::post('/user', 'UserController@store');
-
-// Route::get('/news/create', 'NewsController@create');
-// Route::post('/news', 'NewsController@store');
+//user
+Route::get('/user/create', 'UserController@create');
+Route::post('/user', 'UserController@store');
 
 
+//news
+Route::get('/news/create', 'NewsController@create');
+Route::post('/news', 'NewsController@store');
 
-// //test de relation avec ma base de donnée 1.0
-// Route::get('/messages', 'UserController@test');
+
+//test
+Route::get('/messages', 'UserController@test');
 
 
 
-//new test relation avec ma base de donnée 1.5 tutorial
-Route::get('/home', 'PagesController@home');
-    
- 
-Route::resource('tasks', 'TasksController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

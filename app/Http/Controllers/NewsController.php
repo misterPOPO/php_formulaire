@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Vue;
 class NewsController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        // $message = Vue::latest('updated_at')->get();
+        // return view('news.result', compact('message'));
     }
 
     /**
@@ -23,6 +24,7 @@ class NewsController extends Controller
      */
     public function create()
     {
+
         return view('news.formulaire');
     }
 
@@ -34,12 +36,18 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+
             $data = [];
             $data['news'] = [
             'title' => $request->title,
             'content' => $request->content,
-         
-        ];
+            ];
+
+            $news = new Vue;
+            $news ->title = $request->title;
+            $news ->content = $request->content;
+            $news ->save();
+      
         
         return view('news.result',$data);
     }
@@ -52,7 +60,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**

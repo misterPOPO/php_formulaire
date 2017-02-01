@@ -12,6 +12,7 @@
             <textarea name="content"  class="form-control" rows="8" cols="80"></textarea>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
+        
     </form>
 
 @endsection

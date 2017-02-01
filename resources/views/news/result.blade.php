@@ -1,10 +1,7 @@
 @extends('template')
-
 @section('content')
-    <h2>Resultats du formulaire</h2>
-
-<p><a href="#">{{$news->id}}</a>
-<a> a écrit :</a>{{$news->Content}}</p>
+  
+{{-- {{$news->title}}{{$news->content}} --}}
 
 
     <h3>Title</h3>
@@ -12,5 +9,16 @@
 
     <h3>Content</h3>
 	<p>{{$news['content']}}</p>
+
+	<div class="row">
+            <div class="col-md-6">
+                <a href="" class="btn btn-info">voir message</a>
+                <a href="" class="btn btn-primary">Edit message</a>
+                <button href="" type="submit" class="btn btn-danger">supprime message</button>
+            </div>        
+	</div>
+
+
+
 	
 @endsection
